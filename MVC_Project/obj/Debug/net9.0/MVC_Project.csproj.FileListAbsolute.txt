@@ -232,3 +232,5 @@ C:\Users\CRC\Downloads\Back_End\MVCProject\MVC_Project\obj\Debug\net9.0\compress
 C:\Users\CRC\Downloads\Back_End\MVCProject\MVC_Project\obj\Debug\net9.0\compressed\tafbvzqeb4-dbgu5uspjn.gz
 C:\Users\CRC\Downloads\Back_End\MVCProject\MVC_Project\obj\Debug\net9.0\compressed\5jcqdet994-dbgu5uspjn.gz
 C:\Users\CRC\Downloads\Back_End\MVCProject\MVC_Project\obj\Debug\net9.0\MVC_Project.sourcelink.json
+C:\Users\CRC\Downloads\Back_End\MVCProject\MVC_Project\obj\Debug\net9.0\compressed\yh2zewyz2i-oqzcgiqk1q.gz
+C:\Users\CRC\Downloads\Back_End\MVCProject\MVC_Project\obj\Debug\net9.0\compressed\rdk35mos5i-vtm9dvzpet.gz
