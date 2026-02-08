@@ -1,0 +1,50 @@
+@model List<Category>
+
+<div class="card">
+  @if(!Model.Any()){
+       <div class="alert alert-warning">Category Not Found </div>
+        }
+    
+
+ else{
+
+    <div class="card-header">
+        <h3 class="card-title">Bordered Table</h3>
+    </div>
+  
+    <table class="table table-bordered mb-0" role="table">
+        <thead>
+            <tr>
+                <th style="width: 10px" scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var category in Model)
+            {
+                <tr class="align-middle">
+                    <td>@category.id</td>
+                    <td>@category.Name</td>
+                      <td>
+                        <a asp-Controller= "Categories" asp-action="remove" asp-route-id="@category.id" class="btn btn-danger">
+                            Delete
+                        </a>
+                        
+                         </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+   
+    }
+    <div class="card-footer clearfix">
+        <ul class="pagination pagination-sm m-0 float-end">
+            <li class="page-item"><a class="page-link" href="#">«</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">»</a></li>
+        </ul>
+    </div>
+</div>

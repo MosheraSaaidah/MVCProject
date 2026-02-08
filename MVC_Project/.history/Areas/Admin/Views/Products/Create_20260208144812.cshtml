@@ -1,0 +1,41 @@
+﻿@model Product
+
+<form asp-controller="Products" asp-action="Create" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="productName" class="form-label">Product Name</label>
+        <input asp-for="Name" class="form-control" id="productName">
+        <span class="text-danger" asp-validation-for="Name"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="productPrice" class="form-label">Product Price</label>
+        <input asp-for="Price" class="form-control" id="productPrice">
+        <span class="text-danger" asp-validation-for="Price"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="productDescription" class="form-label">Product Description</label>
+        <input asp-for="Description" class="form-control" id="productDescription">
+        <span class="text-danger" asp-validation-for="Description"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="productRate" class="form-label">Product Rate</label>
+        <input asp-for="Rate" class="form-control" id="productRate">
+        <span class="text-danger" asp-validation-for="Rate"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="productImage" class="form-label">Product Image</label>
+        <input type="file" asp-for="Image" class="form-control" id="productImage">
+        <span class="text-danger" asp-validation-for="Image"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="categoryId" class="form-label">Category Id</label>
+        <input asp-for="CategoryId" class="form-control" id="categoryId">
+        <span class="text-danger" asp-validation-for="CategoryId"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Create</button>
+</form>

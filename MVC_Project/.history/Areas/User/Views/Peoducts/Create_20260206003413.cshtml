@@ -1,0 +1,20 @@
+﻿@model Product
+
+<form asp-Controller="Categories" asp-action="Store" method="post" >
+<div class="mb-3">
+
+    <label for="exampleInputEmail1" class="form-label">Product Name</label>
+  <input asp-for=name class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  <span class="text-danger" asp-validation-for=name></span>
+    </div>
+
+
+  <label for="exampleInputEmail1" class="form-label">Product Name</label>
+  <input asp-for=name class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  <span class="text-danger" asp-validation-for=name></span>
+    </div>
+
+
+
+ <button class="btn btn-success">Create</button>
+</form>

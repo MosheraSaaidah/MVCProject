@@ -1,0 +1,46 @@
+﻿@model Product
+<
+<form asp-controller="Products" asp-action="Store" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label asp-for="name" class="form-label">Product Name</label>
+        <input asp-for="name" class="form-control">
+        <span class="text-danger" asp-validation-for="name"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="price" class="form-label">Product Price</label>
+        <input asp-for="price" class="form-control">
+        <span class="text-danger" asp-validation-for="price"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="description" class="form-label">Product Description</label>
+        <input asp-for="description" class="form-control">
+        <span class="text-danger" asp-validation-for="description"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="rate" class="form-label"> Product Rate</label>
+        <input asp-for="rate" class="form-control">
+        <span class="text-danger" asp-validation-for="rate"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="image" class="form-label">Product image</label>
+        <input type="file" asp-for="image" class="form-control">
+        <span class="text-danger" asp-validation-for="image"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="CategoryId" class="form-label"></label>
+       <select class="form-select">
+        @foreach(var item in (List(Categories))ViewData["categories"]){
+            <option>@item.name</option>
+        }
+
+        </select>
+        <span class="text-danger" asp-validation-for="CategoryId"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Create</button>
+</form>
