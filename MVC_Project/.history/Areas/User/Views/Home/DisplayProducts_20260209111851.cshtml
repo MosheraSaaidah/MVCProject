@@ -1,0 +1,45 @@
+﻿@model List<Product>
+
+<div class="container">
+    <h2 class="my-4">@ViewBag.CategoryName Products</h2>
+    
+    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        @if(Model.Any())
+        {
+            @foreach(var product in Model)
+            {
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        @if(!string.IsNullOrEmpty(product.image))
+                        {
+                            <img class="card-img-top" src="@product" alt="@product.name" />
+                        }
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">@product.name</h5>
+                                <p>@product.price.ToString("C")</p>
+                            </div>
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <a class="btn btn-outline-dark mt-auto" href="#">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-12">
+                <p class="text-center">No products available in this category.</p>
+            </div>
+        }
+    </div>
+    
+    <div class="text-center my-4">
+        <a asp-area="User" asp-controller="Home" asp-action="Index" class="btn btn-secondary">
+            Back to Categories
+        </a>
+    </div>
+</div>

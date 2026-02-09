@@ -13,11 +13,24 @@ namespace MVC_Project.Areas.User.Controllers
     public class HomeController : Controller
     {
 
-        ApplicationDbContext context =new ApplicationDbContext();
+        ApplicationDbContext context = new ApplicationDbContext();
         public IActionResult Index()
         {
             var categories = context.Categories.ToList();
             return View(categories);
         }
+
+        public IActionResult DisplayProducts(int id)
+        {
+            var category = context.Categories.Find(id);
+            if (category == null)
+            {
+                return Content("Not Found");
+            }
+            var products = context.Products.Where(p => p.CategoryId == id).ToList();
+            ViewBag.CategoryName = category.Name;
+            return View(products);
+        }
+
     }
 }

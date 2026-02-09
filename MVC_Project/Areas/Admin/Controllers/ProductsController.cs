@@ -107,17 +107,14 @@ public IActionResult Update(Product request, int id, IFormFile image)
 
         if (product != null)
         {
-            // تحديث البيانات
             product.name = request.name;
             product.price = request.price;
             product.description = request.description;
             product.rate = request.rate;
             product.CategoryId = request.CategoryId;
 
-            // إذا في صورة جديدة
             if (image != null && image.Length > 0)
             {
-                // حذف الصورة القديمة
                 if (!string.IsNullOrEmpty(product.image))
                 {
                     var oldImagePath = Path.Combine(Directory.GetCurrentDirectory(),@"wwwroot\image", product.image);
